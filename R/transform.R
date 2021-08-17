@@ -178,8 +178,8 @@ findTransformORB <- function(template, image, warp_mode = "affine", max_features
   if (template$space != "GRAY" | image$space != "GRAY")
     stop("'template' and 'image' must be grayscale images.")
 
-  if (warp_mode == "affine" & !(homography_method %in% c("RANSAC", "LSMEDS")))
-    stop("When warp_mode='affine', homography_method can only be one of 'RANSAC' or 'LSMEDS'.")
+  if (warp_mode == "affine" & !(homography_method %in% c("RANSAC", "LMEDS")))
+    stop("When warp_mode='affine', homography_method can only be one of 'RANSAC' or 'LMEDS'.")
 
   `_findTransformORB`(template, image,
                       switch(warp_mode,
